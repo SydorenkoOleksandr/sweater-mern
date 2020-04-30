@@ -1,0 +1,5 @@
+{
+    "port": "5000",
+    "jwtSecret": "oleksandr mern",
+    "mongoURL":"mongodb+srv://oleksandr:samsung1@cluster0-epu1m.mongodb.net/todos"
+}
