@@ -18,9 +18,9 @@ export const Navbar =  () => {
    
   
     return(
-      
+      <div className="container">
       <nav>
-        <div className="nav-wrapper blue lighten-3">
+        <div className="nav-wrapper blue lighten-2">
           <NavLink to="/" className=" left brand-logo">SWEATER </NavLink>
      
           <ul id="nav-mobile" className="right hide-on-sm-and-down">
@@ -29,16 +29,30 @@ export const Navbar =  () => {
               <label htmlFor="autocomplete-input" value="Autocomplete"></label>
             </div>
             </li>
-            <li><NavLink to="/create">Create</NavLink></li>
-            <li><NavLink to="/detail/1">Detail</NavLink></li>
-            
-              <li><a href="/"  onClick={logoutHandler} >Logout</a></li>
+            <li>
+              <NavLink 
+              to="/create"
+              >
+                Create
+                </NavLink>
+                </li>
+            <li>
+              <NavLink 
+              to="/detail/1"
+              >
+                Detail
+                </NavLink>
+                </li>
+              <li>
+                <a href="/" 
+                 onClick={logoutHandler} 
+                 >
+                   Logout
+                   </a>
+                   </li>
           </ul>
-          
-        
-
           </div>
-       
       </nav>
+      </div>
    )
 }

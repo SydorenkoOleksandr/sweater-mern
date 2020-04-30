@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Autocomplete = () => {
+export const Profile = () => {
     return(
        
     )

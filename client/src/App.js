@@ -6,6 +6,7 @@ import { AuthContext } from './context/AuthContext'
 import { Navbar } from './components/Navbar'
 // import {Loader} from './components/Loader'
 import 'materialize-css'
+import { NavbarLogout } from './components/NavbarLogout'
 
 function App() {
   const {token, login, logout, userId} = useAuth()
@@ -17,14 +18,12 @@ function App() {
       token, login, logout, userId, isAuthenticated 
     }}>
        <Router>
-      { isAuthenticated && <Navbar /> }  
-    
-    
+      { isAuthenticated &&  <Navbar /> }  
+      { !isAuthenticated &&  <NavbarLogout /> }  
       <div className="container">
-      
          {routes}
-
       </div>
+     
      </Router>
     </AuthContext.Provider>
    
