@@ -20,7 +20,7 @@ export const LoginPage = () => {
     }, [error, message, clearError])
 
     useEffect(() => {
-        window.M.updateTextFields()
+        window.M.updateTextFields()     // делает поля активными
    }, [])
 
     const changeHandler = event => {                                        

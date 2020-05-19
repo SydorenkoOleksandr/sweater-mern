@@ -1,27 +1,28 @@
 import React, {useContext} from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
-// import { useRoutes } from '../routes'
-import { AuthContext } from '../context/AuthContext'
-import { useAuth } from '../hooks/auth.hook'
+import  { AuthContext }  from '../../context/AuthContext'
+import './Navbar.module.css'
 
-export const Navbar =  () => {
+export const Navbar =  (props) => {
   const history = useHistory()
   const auth = useContext(AuthContext)
-
+  const isAuth =  props.isAuth
 
     const logoutHandler = event => {
       event.preventDefault()
       auth.logout();
       history.push('/login')
     }
-
+    
    
-  
+   
+    if(isAuth){
     return(
+      
       <div className="container">
       <nav>
-        <div className="nav-wrapper blue lighten-2">
-          <NavLink to="/" className=" left brand-logo">SWEATER </NavLink>
+        <div className="nav-wrapper  blue lighten-2">
+          <NavLink to="/" className="left brand-logo">SWEATER</NavLink>
      
           <ul id="nav-mobile" className="right hide-on-sm-and-down">
             <li><div className="col s8">
@@ -54,5 +55,21 @@ export const Navbar =  () => {
           </div>
       </nav>
       </div>
+
+   )}
+   return(
+     <div>
+      <div className="container">
+      <nav>
+        <div className="nav-wrapper blue lighten-2" >
+          <NavLink to="/" className="brand-logo">SWEATER </NavLink>
+          <ul id="nav-mobile" className="right hide-on-sm-and-down">
+              <li><NavLink to="/login" >Login </NavLink></li>
+              <li><NavLink to="/registration" >Registration </NavLink></li>
+          </ul>
+            </div>
+        </nav>
+      </div>
+     </div>
    )
 }

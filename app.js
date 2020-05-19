@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json({ extended:true }))
 
 app.use('/api/auth', require('./routes/auth.routes'));    // router authorization
-// app.use('/api/cards', require('./routes/cards.routes'));   // router to DB cards
+app.use('/api/card', require('./routes/card.routes'));   // router to DB cards
 
 
 const PORT = config.get("port") || 5000  // port for localhost from config

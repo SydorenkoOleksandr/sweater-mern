@@ -36,8 +36,7 @@ export const RegistrationPage = () => {
         try {
             const data = await request('/api/auth/login', 'POST', {...form})
             auth.login(data.token, data.userId)
-            console.log('Data', data.token)
-            alert('asd')
+           
 
         } catch (e) {}
     }
