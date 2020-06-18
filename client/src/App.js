@@ -20,8 +20,8 @@ function App() {
     }}>
        <Router>
        
-      { isAuthenticated &&  <Navbar isAuth={true}/> }  
-      { !isAuthenticated &&  <Navbar isAuth={false}/> } 
+      { isAuthenticated &&  <Navbar isAuth={true}/>  }  
+      { !isAuthenticated &&  <Navbar isAuth={false}/>  } 
       <div className="container">
          {routes}
       </div>

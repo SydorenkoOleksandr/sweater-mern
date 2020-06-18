@@ -10,11 +10,7 @@ export const CreatePage = () => {
     const {request} = useHttp()
     const [postText, setPostText] = useState('' )
 
-    // const changeHandler =async event => {        
-               
-                         
-    //     setMessage({ ...form, [event.target.name]: event.target.value })
-    // }
+ 
     useEffect(() => {
         window.M.updateTextFields()
       }, [])
@@ -41,16 +37,7 @@ export const CreatePage = () => {
                 setText={ setText }
                 PostCreateHandler={ PostCreateHandler }
            />
-{/* 
-            <input 
-             placeholder="Enter your message"  
-             id="textarea" 
-             type="text"
-             value={ postText }
-            onChange={setText}
-            onKeyPress={PostCreateHandler}
-           />  */}
-            
+                       
         </div>
     )
 }

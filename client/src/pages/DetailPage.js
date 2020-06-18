@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import {useHttp} from '../hooks/http.hook'
 import { AuthContext } from '../context/AuthContext'
 import {Loader} from '../components/Loader/Loader'
-import { MessageCard } from '../components/MessageCard/MessageCard'
+import { MessageCard } from '../components/MessageList/MessageCard/MessageCard'
 export const DetailPage = () => {
     const {token} = useContext(AuthContext)
     const {request, loading} =  useHttp()
@@ -18,7 +18,7 @@ export const DetailPage = () => {
                 Authorization: `Bearer ${token}`
              })
              setPostText(fetched)
-             console.log(postText)
+            
 
            } catch (e) {
            }
@@ -30,15 +30,15 @@ export const DetailPage = () => {
         getMessage()
         
     }, [getMessage])
+
+    
     if(loading){
         return <Loader />
     }
 
-
-    
     return(
         <>
-            {console.log(postText)}
+            
         { !loading && postText && <MessageCard message={ postText }  /> }
 
         </>

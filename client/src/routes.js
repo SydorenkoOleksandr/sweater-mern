@@ -5,6 +5,7 @@ import { CreatePage } from './pages/CreatePage'
 import { DetailPage } from './pages/DetailPage'
 import { RegistrationPage } from './pages/RegistrationPage'
 import { LoginPage } from './pages/LoginPage'
+import { MessagesPage } from './pages/MessagesPage'
 
 
 export const useRoutes = isAuthenticated => {
@@ -14,6 +15,9 @@ export const useRoutes = isAuthenticated => {
                 <Route path="/" exact>
                     <MainPage />
                 </Route>
+                {/* <Route path="/messages" exact>
+                    <MessagesPage />
+                </Route> */}
                 <Route path="/create" exact>
                     <CreatePage />
                 </Route>

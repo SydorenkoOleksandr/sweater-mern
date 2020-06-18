@@ -4,12 +4,13 @@ import { AuthContext } from '../context/AuthContext'
 import { Loader } from '../components/Loader/Loader'
 import {MessageList} from '../components/MessageList/MessageList'
 
-export const MainPage = () => {
+
+
+export const MessagesPage = () => {
     const [messages, setMessages] = useState()
     const { loading, request } = useHttp()
     const { token } = useContext(AuthContext)
 
-   
     const fetchMessages = useCallback(async () => {
         try {
             const fetched = await request('/api/card', 'GET', null, {
@@ -22,6 +23,7 @@ export const MainPage = () => {
     },
         [token, request]
     )
+    
     useEffect(() => {
         fetchMessages()
     }, [fetchMessages])
@@ -30,17 +32,12 @@ export const MainPage = () => {
         return <Loader />
     }
 
-    // if(!token){
-    //     <>
-    //          {!loading && <MessageList messages={ messages } />}
-    //      </>
-    // }
-
     return (
 
         <>
-            {!loading && <MessageList messages={ messages } />}
+            {!loading && <MessageList messages={messages} />}
         </>
-  
+
+
     )
 }

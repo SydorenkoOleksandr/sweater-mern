@@ -19,7 +19,6 @@ module.exports = (req, res, next) => {
     next()
 
   } catch (e) {
-    console.log(res.headers)
     res.status(401).json({ message: 'Нет ничего' })
   }
 }

@@ -5,9 +5,8 @@ export const MessageCard = ({ message }) => {
         <> 
             <h2>Message</h2>
 
-    <p> Сообщение : { message.message} </p>
-    <p> {message.date}</p>
-    <p> {message.userName}</p>
+            <p> Сообщение : { message.message} </p>
+            <p> {message.date}</p>
     
 
 
